@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+
+	<link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		
+		<h2>Classify whether the message is Spam or not.</h2>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p style="color:black; text-align: center;">Enter your message which you want check</p>
+
+		<textarea name="message" rows="6" cols="50"></textarea>
+		<br/>
+
+		<input type="Submit" class="btn-info" value="Predict">
+		
+	</form>
+		
+
+	</div>
+
+	<div class="results">
+
+
+		
+	{% if prediction_text == 1%}
+	<h2 style="color:black; text-align: center;">Spam</h2>
+	 <p><img src="{{url_for('static',filename='images.jpg')}}"></p>
+	{% elif prediction_text == 0%}
+	<h2 style="color:black; text-align: center;">Not Spam</h2>
+	<p><img src="{{url_for('static',filename='not_spam.jpg')}}"></p>
+	{% endif %}
+
+	</div>
+
+
+</body>
+
+
+
+	<footer class="footer">
+    <div class="footerContainer">
+        <p class="copyright">Copyright 2020 @Shrut Shah</p>
+    </div>
+</html>
