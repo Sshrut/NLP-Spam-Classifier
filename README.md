@@ -1,3 +1,3 @@
 # NLP-Spam-Classifier
 
-[Click here](https://nlpspam-classifier.herokuapp.com/)
+[Click here to open the application](https://nlpspam-classifier.herokuapp.com/)
