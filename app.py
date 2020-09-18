@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 import pickle
 
+
 model=pickle.load(open('model.pkl','rb'))
 
 cv=pickle.load(open('change.pkl','rb'))
